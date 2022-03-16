@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstFragmentNavigation">
+
+    <fragment
+        android:id="@+id/firstFragmentNavigation"
+        android:name="com.renat.jetpack.navigation.FirstFragmentNavigation"
+        android:label="FirstFragmentNavigation"
+        tools:layout="@layout/fragment_first_navigation">
+        <action
+            android:id="@+id/action_firstFragmentNavigation_to_secondFragmentNavigation"
+            app:destination="@id/secondFragmentNavigation"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragmentNavigation"
+        android:name="com.renat.jetpack.navigation.SecondFragmentNavigation"
+        android:label="SecondFragmentNavigation"
+        tools:layout="@layout/fragment_second_navigation" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
